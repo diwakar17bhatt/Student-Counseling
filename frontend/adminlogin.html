@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login</title>
+
+  <!-- Tailwind CSS & Font Awesome -->
+  <link rel="stylesheet" href="src/output.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Google Sign-In SDK -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+  <!-- JWT Decode (for decoding Google token) -->
+  <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex items-center justify-center ">
+  
+
+
+
+  <main id="admin-login" class="w-[90%] max-w-md bg-white p-8 rounded-3xl shadow-2xl ">
+    <h1  class="text-3xl font-bold text-center text-red-600 mb-8 ">Login</h1>
+
+    <form id="admin-pass"  class="flex flex-col gap-6">
+      <div class="flex flex-col gap-1">
+        <label for="email" class="text-sm font-medium text-gray-600">Enter email</label>
+        <input id="aemail" type="email"
+          class="border border-gray-300 rounded-xl py-2 px-4 text-sm outline-red-400 focus:ring-2 focus:ring-red-200 transition" />
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <label for="password" class="text-sm font-medium text-gray-600">Enter admin key</label>
+        <input id="akey" type="password"
+          class="border border-gray-300 rounded-xl py-2 px-4 text-sm outline-red-400 focus:ring-2 focus:ring-red-200 transition" />
+      </div>
+
+
+
+      
+
+      <button type="submit"
+        class="bg-red-600 hover:bg-red-700 text-white py-2 rounded-xl transition duration-200 font-semibold cursor-pointer">
+        Login
+      </button>
+    </form>
+
+    <div class="w-full border-t border-gray-200 my-4"></div>
+
+    <!-- Google Sign-In -->
+    <div class="flex flex-col items-center gap-3   w-full">
+      <p class="text-sm text-gray-600">Or sign in using</p>
+      <div id="g_id_onload" data-client_id="295747019906-b51kqcd6lr0gje9t0dpl885cq1mi2bmm.apps.googleusercontent.com"
+        data-context="signin" data-ux_mode="popup" data-callback="handleCredentialResponseAdmin"
+        data-auto_prompt="false">
+      </div>
+
+      <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
+        data-text="sign_in_with" data-size="large" data-logo_alignment="left">
+      </div>
+
+
+    </div>
+    </div>
+  </main>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

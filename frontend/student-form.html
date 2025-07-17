@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Form</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Student Form</title>
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-100 min-h-screen font-sans">
+    <nav
+        class="bg-gradient-to-r from-blue-600 to-purple-600 text-white w-full py-4 px-6 text-2xl font-semibold shadow-md  ">
+        Student Counseling Portal
+    </nav>
+
+    <form id="s-form" class="max-w-4xl mx-auto p-10 bg-white shadow-2xl rounded-3xl space-y-10 mt-10">
+  <h2 class="text-4xl font-bold text-center text-blue-700">Student Information Form</h2>
+
+  <!-- Personal Info -->
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <label for="full_name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+      <input id="full_name" name="full_name" type="text" required
+        class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    </div>
+
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+      <input id="email" name="email" type="email" required
+        class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    </div>
+
+    <div>
+      <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Custom Password</label>
+      <input id="password" name="password" type="password" required
+        class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    </div>
+
+    <div>
+      <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+      <input id="phone" name="phone" type="tel" required
+        class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    </div>
+
+    <div>
+      <label for="gender" class="block text-sm font-medium text-gray-700 mb-2">Gender</label>
+      <select id="gender" name="gender" required
+        class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <option value="" disabled selected hidden>Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="father_name" class="block text-sm font-medium text-gray-700 mb-2">Father's Name</label>
+      <input id="father_name" name="father_name" type="text"
+        class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    </div>
+
+    <div>
+      <label for="mother_name" class="block text-sm font-medium text-gray-700 mb-2">Mother's Name</label>
+      <input id="mother_name" name="mother_name" type="text"
+        class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    </div>
+
+    <div class="md:col-span-2">
+      <label for="address" class="block text-sm font-medium text-gray-700 mb-2">Address</label>
+      <textarea id="address" name="address" rows="3"
+        class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+    </div>
+  </section>
+
+  <!-- Academic Info -->
+  <section class="space-y-8">
+    <h3 class="text-2xl font-semibold text-blue-700 border-b pb-2">High School Marks (10th)</h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <label for="maths_10" class="block mb-2 text-sm font-medium text-gray-700">Mathematics</label>
+        <input id="maths_10" name="maths_10" type="number" required
+          class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <div>
+        <label for="science_10" class="block mb-2 text-sm font-medium text-gray-700">Science</label>
+        <input id="science_10" name="science_10" type="number" required
+          class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <div>
+        <label for="english_10" class="block mb-2 text-sm font-medium text-gray-700">English</label>
+        <input id="english_10" name="english_10" type="number" required
+          class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <div>
+        <label for="hindi_10" class="block mb-2 text-sm font-medium text-gray-700">Hindi</label>
+        <input id="hindi_10" name="hindi_10" type="number" required
+          class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <div>
+        <label for="sst_10" class="block mb-2 text-sm font-medium text-gray-700">Social Science</label>
+        <input id="sst_10" name="sst_10" type="number" required
+          class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <div>
+        <label for="it_10" class="block mb-2 text-sm font-medium text-gray-700">Information Technology (optional)</label>
+        <input id="it_10" name="it_10" type="number"
+          class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+    </div>
+
+    <h3 class="text-2xl font-semibold text-blue-700 border-b pb-2 mt-10">Senior Secondary Marks (10+2)</h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div>
+        <label for="physics" class="block mb-2 text-sm font-medium text-gray-700">Physics</label>
+        <input id="physics_12" name="physics" type="number" required
+          class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <div>
+        <label for="chemistry" class="block mb-2 text-sm font-medium text-gray-700">Chemistry</label>
+        <input  id="chemistry_12" name="chemistry" type="number" required
+          class="appearance-none w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <div>
+        <label for="maths_12" class="block mb-2 text-sm font-medium text-gray-700">Mathematics</label>
+        <input id="maths_12" name="maths_12" type="text" inputmode="numeric" pattern="[0-9]*" required
+          class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+    </div>
+  </section>
+
+  <div class="text-center pt-8">
+    <button type="submit"
+      class="bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold px-8 py-3 rounded-full shadow-md transition duration-300">
+      Submit Form
+    </button>
+  </div>
+</form>
+
+
+    <script src="script.js"></script>
+   
+</body>
+
+</html>

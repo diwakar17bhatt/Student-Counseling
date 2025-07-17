@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="src/output.css" />
+    <title>Student Dashboard</title>
+</head>
+
+<body>
+    <nav
+        class="bg-gradient-to-r from-blue-600 to-purple-600 text-white w-full py-4 px-6 text-2xl font-semibold shadow-md  ">
+        Student Dashboard
+    </nav>
+    <main class="max-w-3xl mx-auto mt-12 bg-white shadow-xl rounded-2xl p-8 space-y-6 font-sans">
+
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+            <div>
+                <label class="text-gray-600 font-medium">Full Name</label>
+                <h1 id="sfull_name" class="text-lg text-gray-800 mt-1">Loading...</h1>
+            </div>
+
+            <div>
+                <label class="text-gray-600 font-medium">Email</label>
+                <h1 id="semail" class="text-lg text-gray-800 mt-1">Loading...</h1>
+            </div>
+
+            <div>
+                <label class="text-gray-600 font-medium">Address</label>
+                <h1 id="saddress" class="text-lg text-gray-800 mt-1">Loading...</h1>
+            </div>
+
+            <div>
+                <label class="text-gray-600 font-medium">Phone Number</label>
+                <h1 id="sphone" class="text-lg text-gray-800 mt-1">Loading...</h1>
+            </div>
+
+            <div>
+                <label class="text-gray-600 font-medium">Gender</label>
+                <h1 id="sgender" class="text-lg text-gray-800 mt-1">Loading...</h1>
+            </div>
+
+            <div>
+                <label class="text-gray-600 font-medium">Father's Name</label>
+                <h1 id="sfather_name" class="text-lg text-gray-800 mt-1">Loading...</h1>
+            </div>
+
+            <div>
+                <label class="text-gray-600 font-medium">Mother's Name</label>
+                <h1 id="smother_name" class="text-lg text-gray-800 mt-1">Loading...</h1>
+            </div>
+            <div>
+                <label class="text-gray-600 font-medium">Allotment</label>
+                <h1 id="allotment" class="text-lg text-gray-800 mt-1">Loading...</h1>
+            </div>
+        </div>
+
+
+        <div class="text-center pt-6">
+            <a href="student-form.html"
+                class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium shadow transition duration-300">
+                Edit Details
+            </a>
+            <button id="all-btn-check"
+                class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium shadow transition duration-300">
+                Refresh
+            </button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (user) {
+    document.getElementById("semail").innerText = user.email;
+    document.getElementById("sfull_name").innerText = user.name;
+    document.getElementById("saddress").innerText = user.address;
+    document.getElementById("sphone").innerText = user.phone;
+    document.getElementById("sgender").innerText = user.gender;
+    document.getElementById("sfather_name").innerText = user.father_name;
+    document.getElementById("smother_name").innerText = user.mother_name;
+  }
+
+ 
+
+</script>
+
+</body>
+
+</html>
