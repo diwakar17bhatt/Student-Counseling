@@ -74,24 +74,6 @@ function handleCredentialResponseAdmin(responseAdmin) {
 
 
 window.addEventListener("DOMContentLoaded", async ()=>{
-   document.getElementById("all-btn-check").addEventListener("click", async ()=>{
-   const email = document.getElementById("semail").innerText
-
-  const response = await fetch("http://localhost:3000/api/allotment-display" ,{
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body : JSON.stringify({email})
-  })
-  const result = await response.json();
-  
-  document.getElementById("allotment").innerText = result.user.allotment
- 
-})
- 
-})
-window.addEventListener("DOMContentLoaded", async ()=>{
   const email = document.getElementById("semail").innerText
   const response = await fetch("http://localhost:3000/api/allotment-display" ,{
       method: "POST",
@@ -106,6 +88,18 @@ window.addEventListener("DOMContentLoaded", async ()=>{
 })
 
 
+window.addEventListener("DOMContentLoaded",()=>{
+   document.getElementById("payment-btn").addEventListener("click", ()=>{
+      if(document.getElementById("allotment").innerText=='ECE' || document.getElementById("allotment").innerText == 'CSE'){
+        window.location.href = 'payment-window.html'
+      }
+      else{
+        alert("Please wait for the allotment to be done")
+      }
+ 
+})
+ 
+})
 
 window.addEventListener("DOMContentLoaded", () => {
   const pathname = window.location.pathname;
