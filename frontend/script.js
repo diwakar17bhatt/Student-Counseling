@@ -277,59 +277,47 @@ async function getUserData() {
 getUserData();
 
 const detail_btn = document.getElementById("detail-btn")
-const btn_10 = document.getElementById("rank-10")
-const btn_12 = document.getElementById("rank-12")
+const marks_btn = document.getElementById("marks-btn")
 const rank_all = document.getElementById("rank-all")
 const cdetail = document.getElementById("details-table")
-const c10 = document.getElementById("rank-10-table")
-const c12 = document.getElementById("rank-12-table")
+const c10 = document.getElementById("student-marks")
 const call = document.getElementById("rank-all-table")
 const allot_btn = document.getElementById("allotment-btn")
 
 detail_btn.addEventListener("click", () => {
   detail_btn.classList.add("bg-red-400")
-  btn_10.classList.remove("bg-red-400")
-  btn_12.classList.remove("bg-red-400")
+  marks_btn.classList.remove("bg-red-400")
+
   rank_all.classList.remove("bg-red-400")
   cdetail.classList.remove("hidden")
   c10.classList.add("hidden")
-  c12.classList.add("hidden")
+
   call.classList.add("hidden")
   allot_btn.classList.add("hidden")
 
   
 });
-btn_10.addEventListener("click", () => {
+marks_btn.addEventListener("click", () => {
   detail_btn.classList.remove("bg-red-400")
-  btn_10.classList.add("bg-red-400")
-  btn_12.classList.remove("bg-red-400")
+  marks_btn.classList.add("bg-red-400")
+
   rank_all.classList.remove("bg-red-400")
   cdetail.classList.add("hidden")
   c10.classList.remove("hidden")
-  c12.classList.add("hidden")
+
   call.classList.add("hidden")
   allot_btn.classList.add("hidden")
   
 });
-btn_12.addEventListener("click", () => {
-  detail_btn.classList.remove("bg-red-400")
-  btn_10.classList.remove("bg-red-400")
-  btn_12.classList.add("bg-red-400")
-  rank_all.classList.remove("bg-red-400")
-  cdetail.classList.add("hidden")
-  c10.classList.add("hidden")
-  c12.classList.remove("hidden")
-  call.classList.add("hidden")
-  allot_btn.classList.add("hidden")
-});
+
 rank_all.addEventListener("click", () => {
   detail_btn.classList.remove("bg-red-400")
-  btn_10.classList.remove("bg-red-400")
-  btn_12.classList.remove("bg-red-400")
+  marks_btn.classList.remove("bg-red-400")
+
   rank_all.classList.add("bg-red-400")
   cdetail.classList.add("hidden")
   c10.classList.add("hidden")
-  c12.classList.add("hidden")
+  
   call.classList.remove("hidden")
   allot_btn.classList.remove("hidden")
 });
@@ -342,21 +330,23 @@ async function getUserRank() {
 
   // Step 1: Add total marks to each user object
   data.forEach(user => {
-    console.log(user)
-    user.totalMarks =
+    user.totalMarks10 =
       user.maths_10 +
       user.science_10 +
       user.sst_10 +
       user.it_10 +
       user.hindi_10 +
       user.english_10;
+    user.totalMarks12 = user.physics_12 +
+      user.chemistry_12 +
+      user.maths_12;
   });
 
   // Step 2: Sort the data in ascending order of totalMarks
   data.sort((a, b) => b.totalMarks - a.totalMarks);
   
   // Step 3: Render the sorted table
-  const table = document.getElementById("rank-10-table");
+  const table = document.getElementById("student-marks");
 
   data.forEach((user, index) => {
     const row = document.createElement("tr");
@@ -370,7 +360,12 @@ async function getUserRank() {
       <td>${user.science_10}</td>
       <td>${user.sst_10}</td>
       <td>${user.it_10}</td>
-      <td>${user.totalMarks}</td>
+      <td>${user.totalMarks10}</td>
+
+      <td>${user.physics_12}</td>
+      <td>${user.chemistry_12}</td>
+      <td>${user.maths_12}</td>
+      <td>${user.totalMarks12}</td>
     `;
 
     table.appendChild(row);
